@@ -10,6 +10,14 @@ function Create_Folder_and_Move {
     mv $first_param $directory/$second_param
 }
 
+if [[ $1 == "-h" || $1 == "help" ]]; then
+    echo ""
+    echo "      Write the target folder name to organize your files"
+    echo "          Example: './file_organizor.sh ./Test'"
+    echo "      This will create folders according to the file extentions and put the files in them"
+    exit 1
+fi
+
 if [ ! -d $1 ]; then
     echo "Directory not found"
     exit 1
